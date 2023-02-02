@@ -11,6 +11,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
+        http.csrf().disable();
         // super 삭제 -> 기존 시큐리티가 가지고 있는 기능 다 비활성화
         http.authorizeRequests()     // 권한이 필요한 요청들은 다음 antMatcherㄴ와 같다
                 .antMatchers("/", "/user/**", "/image/**", "/subscribe/**", "/comment/**").authenticated()  // 해당 요청들은 인증이 필요하다

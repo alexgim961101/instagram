@@ -58,7 +58,15 @@ import org.springframework.web.bind.annotation.GetMapping;
  * redirect 사용법
  * @Controller 에서 return redirect: 키워드 이용
  * */
-@Controller
+
+/**
+ * CSRF 토큰이란?
+ * signup form을 응답으로 보내줄 때, input 태그에 CSRF 라는 임의의 난수를 붙여 클라이언트에게 보내줌
+ * signup form을 이용해 다시 post 요청을 보낼 때, 서버에서 방금 전 보낸 CSRF 토큰이 있는지 검사
+ * 즉, 서버에서 보낸 form 페이지 이외의 페이지(ex. postman)에서 데이터 전송을 막기 위한 기능
+ * 비활성화 방법 : http.csrf().disable();
+ * */
+//@Controller
 public class ViewControllerTest {
 
 	@GetMapping("/auth/signup")
