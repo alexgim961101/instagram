@@ -5,7 +5,8 @@ server:
     encoding:
       charset: utf-8
       enabled: true
-    
+
+# 뷰 리졸버 설정
 spring:
   mvc:
     view:
