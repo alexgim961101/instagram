@@ -56,12 +56,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * redirect 사용법
- * @Controller 에서 return redirect: 키워드 이용 
+ * @Controller 에서 return redirect: 키워드 이용
  * */
 @Controller
 public class ViewControllerTest {
-
-
 
 	@GetMapping("/auth/signup")
 	public String signupPage() {
