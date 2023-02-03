@@ -1,6 +1,7 @@
 package com.cos.instagram.handler;
 
 import com.cos.instagram.handler.ex.CustomValidationException;
+import com.cos.instagram.web.dto.CMRespDto;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +13,7 @@ import java.util.Map;
 public class ControllerExceptionHandler {
 
     @ExceptionHandler(CustomValidationException.class)    // CustomValidationException이 발생하는 모든 예외를 가로챔
-    public Map<String, String> validationException(CustomValidationException e) {
-        return e.getErrorMap();
+    public CMRespDto<Map<String, String>> validationException(CustomValidationException e) {
+        return new CMRespDto(-1, e.getMessage(), e.getErrorMap());
     }
 }
