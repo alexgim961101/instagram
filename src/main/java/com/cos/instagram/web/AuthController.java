@@ -49,6 +49,7 @@ public class AuthController {
             logger.info(signupDto.toString());
             User user = signupDto.toEntity();   // 여기서 의문1 : 엔티티에 제약 사항을 걸어둘 경우 이런식의 처리가 가능한가? => 가능
             logger.info(user.toString());
+            authService.signup(user);
             return "/auth/signin";
         }
     }

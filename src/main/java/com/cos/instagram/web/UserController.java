@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -27,6 +28,7 @@ public class UserController {
         log.info("세션 정보 : {}", principalDetails.getUser());
 //        PrincipalDetails principal = (PrincipalDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 //        User user = principal.getUser();                // 직접 찾는 방법
+        //model.addAttribute("principal", principalDetails.getUser());
         return "user/update";
     }
 }
